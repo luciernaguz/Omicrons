@@ -7,10 +7,12 @@ import json
 from flask import Flask, jsonify, render_template
 import pymongo
 from scrape_nfl import nfl_dict, stats_dict, bowl_dict
+import os
 
 # DEFINE DATABASE AND INSERT CURRENT DATA ---------
 
-conn = "mongodb://localhost:27017"
+conn = os.environ.get('DATABASE_URL','')
+#conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
 db = client.nfl_db
 db.teams.drop()
@@ -43,7 +45,8 @@ def home():
 
 @app.route("/api/v1.0/teams")
 def rendering_home():
-    conn = "mongodb://localhost:27017"
+    conn = os.environ.get('DATABASE_URL','')
+    #conn = "mongodb://localhost:27017"
     client = pymongo.MongoClient(conn)
     db = client.nfl_db
     for i in db.teams.find():
@@ -55,7 +58,8 @@ def rendering_home():
 
 @app.route("/api/v1.0/stats")
 def rendering_stats():
-    conn = "mongodb://localhost:27017"
+    conn = os.environ.get('DATABASE_URL','')
+    #conn = "mongodb://localhost:27017"
     client = pymongo.MongoClient(conn)
     db = client.nfl_db
     for i in db.stats.find():
@@ -67,7 +71,8 @@ def rendering_stats():
 
 @app.route("/api/v1.0/bowl")
 def rendering_bowl():
-    conn = "mongodb://localhost:27017"
+    conn = os.environ.get('DATABASE_URL','')
+    #conn = "mongodb://localhost:27017"
     client = pymongo.MongoClient(conn)
     db = client.nfl_db
     for i in db.bowl.find():
