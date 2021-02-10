@@ -48,7 +48,7 @@
 }
 
 #map-id {
-  height: 600px;
+  height: 500px;
   padding: 0;
   margin: 0;
 }
@@ -6093,8 +6093,8 @@ a.close.disabled {
 
 .bg-primary {
   /* background-color: #007bff !important; */ /* Original */
-  /* background-color: #abcef3 !important; */ /* Light Blue */
-  background-color: #013369 !important; /* NFL Blue */
+  /*background-color: #abcef3 !important; */ /* Light Blue */
+   background-color: #013369 !important; /*NFL Blue */
 }
 
 
