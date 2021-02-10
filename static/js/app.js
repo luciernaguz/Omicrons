@@ -1,11 +1,12 @@
 //Check if JS is properly connected
 console.log('Ok connected 23 - app.js');
 //Get jsonData
-// let jsonData = '/api/v1.0/teams'; //NEED TO FIX - TO GET FROM URL
+let jsonData = '/api/v1.0/teams'; //NEED TO FIX - TO GET FROM URL
+let jsonStadiums='../Data/stadiums_nfl.json';
 // let jsonData = '../Data/nflData.json'; //NEED TO FIX - TO GET FROM URL
 // let jsonData = '../Data/TeamsData.json'; // (ref 1)
-let jsonData = '../Data/nfl_teams.json'; // (ref 2)
-let jsonStadiums='../Data/stadiums_nfl.json';
+// let jsonData = '../Data/nfl_teams.json'; // (ref 2)
+// let jsonStadiums='../Data/stadiums_nfl.json';
 
 // Icon
 let Icon = L.icon({
@@ -61,9 +62,9 @@ function init(){
 function fillDropdown(){
     d3.json(jsonData).then((data) => {
         console.log(data)
-        // let teams = data.data[0]; // para /api/v1.0/teams
+        let teams = data.data[0]; // para /api/v1.0/teams
         // let teams = data.data; // Para leer directo del Json (ref 1)
-        let teams = data; // Para leer directo del Json completo (ref 2)
+        // let teams = data; // Para leer directo del Json completo (ref 2)
 
         //Dropdowns
         //Dropdown Selected by Team
@@ -88,9 +89,9 @@ function optionChanged(selectedTeam){
     console.log(`Selected Team: ${selectedTeam}`)
     d3.json(jsonData).then((data) => {
         console.log(data)
-        // let teams = data.data[0]; // para /api/v1.0/teams
+        let teams = data.data[0]; // para /api/v1.0/teams
         // let teams = data.data; // Para leer directo del Json
-        let teams = data; // Para leer directo del Json completo (ref 2)
+        // let teams = data; // Para leer directo del Json completo (ref 2)
 
         //Display image
         for(x in teams){
@@ -174,3 +175,4 @@ function createMarkers() {
 
 //Execute init fuctions
 init();
+
