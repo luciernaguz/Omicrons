@@ -47,7 +47,7 @@ def home():
 def rendering_home():
     conn = os.environ.get('DATABASE_URL','')
     #conn = "mongodb://localhost:27017"
-    client = pymongo.MongoClient(conn)
+    #client = pymongo.MongoClient(conn)
     db = client.nfl_db
     for i in db.teams.find():
         return json.dumps(i, indent=4, default=json_util.default)

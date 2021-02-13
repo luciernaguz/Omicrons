@@ -9,6 +9,21 @@ var jsonPlotData = '/static/Data/plot.json';
 // let jsonData = '../Data/nfl_teams.json'; // (ref 2)
 // let jsonStadiums='../Data/stadiums_nfl.json';
 
+
+granimInstance = new Granim({
+    element: '#canvas-basic',
+    name: 'granim',
+    opacity: [1, 1],
+    states : {
+        "default-state": {
+            gradients: [
+                ['#34495E', '#F7F9F9'],
+                ['#1B4F72', '#000080']
+            ]
+        }
+    }
+});
+
 // Icon
 let Icon = L.icon({
             iconUrl: 'static/images/logo1.png',
@@ -45,10 +60,8 @@ let Icon = L.icon({
     layers: [lightmap]
   });
 
-  let Markers= L.marker();
-
-  let Stadiums =L.marker();
-
+let Markers= L.marker();
+let Stadiums =L.marker();
 /**
  * Execute init functions
  */
@@ -125,9 +138,7 @@ function optionChanged(selectedTeam){
                 Markers=L.marker([teams[x].StadiumDetails.GeoLat, teams[x].StadiumDetails.GeoLong],{icon:Icon})
                 .bindPopup("<h3>" + teams[x].StadiumDetails.Name + "<h3><h3>Capacity: " + teams[x].StadiumDetails.Capacity + "</h3><h3>Type: " + teams[x].StadiumDetails.Type + "</h3>").addTo(map);
                 
-                //d3.select('#map-id').addLayer(stadiumMarkers);     
-                           
-                //.bindPopup("<h3>" + stadium.Name + "<h3><h3>Capacity: " + stadium.Capacity + "</h3><h3>Type: " + stadium.Type + "</h3>");
+             
             }
         }
     });
@@ -135,32 +146,32 @@ function optionChanged(selectedTeam){
 
 //Map Base
 function createMarkers() {
-    d3.json(jsonStadiums).then((data) => {
+    d3.json(jsonStadiums).then((data) => {        
         //console.log(data)
-        // Pull the "stadiums" property off of response.data
-        let stadiums = data;
-        //console.log(stadiums);
+        
+        let stadiums = data;        
+        console.log(stadiums);
 
         // Initialize an array to hold stadiums markers
-        stadiumMarkers = [];
-    
-
+        stadiumMarkers = []; 
     
         // Loop through the stadiums array
         for (var index = 0; index < stadiums.length; index++) {
             var stadium = stadiums[index];
-            console.log(stadium);
+            //console.log(stadium);
             // For each stadium, create a marker and bind a popup with the stadium's name
             let sMarker=L.marker([stadium.GeoLat, stadium.GeoLong], {icon:Icon})
             .bindPopup("<h3>" + stadium.Name + "<h3><h3>Capacity: " + stadium.Capacity + "</h3><h3>Type: " + stadium.Type + "</h3>");
             //console.log(sMarker);    
             stadiumMarkers.push(sMarker);
-            //console.log(stadiumMarkers);
-        
+            //console.log(stadiumMarkers);        
         }
 
         Stadiums=L.layerGroup(stadiumMarkers).addTo(map);
-        console.log(Stadiums);
+        //console.log(Stadiums);
+
+
+
  });
 } 
 
@@ -213,17 +224,8 @@ function plotdata(selectedTeam, PrimaryColor){
     });
 }
 
-  
-   
-  
-    //Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
-    // L.control.layers(baseMaps, overlayMaps, {
-    //   collapsed: false
-    // }).addTo(map);    
-
-    //Stadiums =L.marker([39.09, -84.51]).addTo(map);
-
-
 //Execute init fuctions
 init();
 
+
+ 

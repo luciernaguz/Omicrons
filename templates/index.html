@@ -30,28 +30,31 @@
 
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script> -->
-
+         
+        
     </head>
     <body class="sb-nav-fixed">
+        
         <!-- Navbar Dashboard -->
+       
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Start NFL Dashboard</a>
+            <a class="navbar-brand" href="/index.html">Start NFL Dashboard</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         </nav>
+        
 
         <!-- Div for body of the Navbar side-->
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">                            
+                    <div class="sb-sidenav-menu">  
+                        <div class="nav">                      
                             <div class="sb-sidenav-menu-heading">Select by:</div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-award"></i></div>
                                 <!-- Teams -->
                                 <select id="selectedTeam" onchange="optionChanged(this.value)"></select> 
-                            </a>
-                            
+                            </a>                           
                             <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
                                 Coach
@@ -80,6 +83,7 @@
 
             <div id="layoutSidenav_content">
                 <main>
+                    <canvas id="canvas-basic"></canvas>
                     <div class="container-fluid">
                         <!-- NFL Logo Jumbotron -->
                         <!-- <div class="jumbotron jumbotron-fluid"></div> -->
@@ -213,6 +217,7 @@
                 </main>
             </div>
         </div>
+        <script src="/static/js/granim.min.js"></script>
         <!-- D3.js snippet -->
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <!-- JQuery scripts link -->
