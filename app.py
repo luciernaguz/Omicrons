@@ -30,29 +30,28 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # return f"""
-    # <h1>Welcome to Omicron Team NFL Project</h1>
-    # <p>---------------------------------</p>
-    # <h3>Routes available:</h3>
-    # <p>/api/v1.0/teams (for total data registered)</p>
-    # <p>/api/v1.0/stats (for 2020 stats)</p>
-    # <p>/api/v1.0/bowl (for past SuperBowl data)</p>
-
-    # <p>-----------------------------</p>"""
     return render_template('index.html')
 
 @app.route("/about")
 def about():
-    # return f"""
-    # <h1>Welcome to Omicron Team NFL Project</h1>
-    # <p>---------------------------------</p>
-    # <h3>Routes available:</h3>
-    # <p>/api/v1.0/teams (for total data registered)</p>
-    # <p>/api/v1.0/stats (for 2020 stats)</p>
-    # <p>/api/v1.0/bowl (for past SuperBowl data)</p>
-
-    # <p>-----------------------------</p>"""
     return render_template('about.html')
+
+@app.route("/charts")
+def charts():
+    return render_template('charts.html')
+
+@app.route("/conclusions")
+def conclusions():
+    return render_template('conclusions.html')
+
+@app.route("/predictions")
+def predictions():
+    return render_template('predictions.html')
+
+@app.route("/tables")
+def tables():
+    return render_template('tables.html')
+
 
 
 # CUSTOM TEAMS JSON HOSTING FUNCTION -------------
