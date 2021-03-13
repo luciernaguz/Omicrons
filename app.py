@@ -41,6 +41,20 @@ def home():
     # <p>-----------------------------</p>"""
     return render_template('index.html')
 
+@app.route("/about")
+def about():
+    # return f"""
+    # <h1>Welcome to Omicron Team NFL Project</h1>
+    # <p>---------------------------------</p>
+    # <h3>Routes available:</h3>
+    # <p>/api/v1.0/teams (for total data registered)</p>
+    # <p>/api/v1.0/stats (for 2020 stats)</p>
+    # <p>/api/v1.0/bowl (for past SuperBowl data)</p>
+
+    # <p>-----------------------------</p>"""
+    return render_template('about.html')
+
+
 # CUSTOM TEAMS JSON HOSTING FUNCTION -------------
 
 @app.route("/api/v1.0/teams")
