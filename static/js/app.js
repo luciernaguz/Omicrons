@@ -1,10 +1,10 @@
 //Check if JS is properly connected
 console.log('Ok connected 23 - app.js');
 //Get jsonData
-let jsonData = '/api/v1.0/teams'; //NEED TO FIX - TO GET FROM URL
+// let jsonData = '/api/v1.0/teams'; //NEED TO FIX - TO GET FROM URL
 let jsonStadiums='static/Data/stadiums_nfl.json';
 var jsonPlotData = '/static/Data/plot.json';
-// let jsonData = '../Data/nflData.json'; //NEED TO FIX - TO GET FROM URL
+let jsonData = '../Data/nflData.json'; //NEED TO FIX - TO GET FROM URL
 // let jsonData = '../Data/TeamsData.json'; // (ref 1)
 // let jsonData = '../Data/nfl_teams.json'; // (ref 2)
 // let jsonStadiums='../Data/stadiums_nfl.json';
@@ -17,17 +17,21 @@ granimInstance = new Granim({
     states : {
         "default-state": {
             gradients: [
-                ['#34495E', '#F7F9F9'],
-                ['#1B4F72', '#000080']
-            ]
+                // NFL Blue: #013369
+                // NFL Red: #D50A0A
+                ['#013369', '#F7F9F9'],
+                ['#D50A0A', '#000080']
+            ],
+            transitionSpeed: 40000
         }
     }
+    
 });
 
 // Icon
 let Icon = L.icon({
-            iconUrl: 'static/images/logo1.png',
-            shadowUrl: 'static/images/logo2.png',
+            iconUrl: '../static/images/logo1.png',
+            shadowUrl: '../static/images/logo2.png',
             iconSize:     [30, 48], // size of the icon
             shadowSize:   [25, 20], // size of the shadow
             iconAnchor:   [16, 80], // point of the icon which will correspond to marker's location
@@ -55,8 +59,8 @@ let Icon = L.icon({
     
   // Create the map object with options
   let map = L.map("map-id", {
-    center: [37.09, -95.71],
-    zoom: 5,
+    center: [40, -99],
+    zoom: 4,
     layers: [lightmap]
   });
 
