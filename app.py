@@ -27,8 +27,8 @@ db.bowl.insert_one(bowl_dict)
 app = Flask(__name__)
 
 # HOME FUNCTION ----------
-
-@app.route("/")
+# Renderize the html pages
+@app.route("/index")
 def home():
     return render_template('index.html')
 

@@ -7,22 +7,22 @@
         <meta name="description" content="NFL Dashboard Project" />
         <meta name="author" content="Omicron's team" />
 
-        <!-- Icon for window -->
+        <!-- Icon for tab -->
         <link rel="icon" href="/static/images/logo1.png">
 
         <!-- Reference to CSS stylesheet -->
         <link href="/static/css/styles.css" rel="stylesheet" />
 
-        <!-- Reference to Bootstrap -->
+        <!-- Reference to Ajax -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 
-        <title>Players Stats - Omicron's NFL Project</title>
+        <title>Stats - Player</title>
     </head>
     <body class="sb-nav-fixed">
 
         <!-- Navbar Dashboard -->       
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Start NFL Dashboard</a>
+            <a class="navbar-brand" href="/index">Start NFL Dashboard</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         </nav>
 
@@ -33,23 +33,26 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Stats</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/charts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
                                 Player Stats
                             </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Teams
+                            <a class="nav-link" href="/tables">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                                Team Stats
+                            </a>
+                            <a class="nav-link" href="/predictions">
+                                <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
+                                Predictions
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
                             <br>
                             <br>
-                            <br>
-                            <a class="nav-link" href="conclusions.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
+                            <a class="nav-link" href="/conclusions">
+                                <div class="sb-nav-link-icon"><i class="fas fa-scroll"></i></i></div>
                                 Conclusions
                             </a>
-                            <a class="nav-link" href="about.html">
+                            <a class="nav-link" href="/about">
                                 <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
                                 About
                             </a>
@@ -66,9 +69,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Player Stats</h1>
+                        <br>
+                        <!-- <h1 class="mt-4">Player Stats</h1> -->
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
                             <li class="breadcrumb-item active">Player Stats</li>
                         </ol>
                         
@@ -78,20 +82,75 @@
                                 <div class="card mb-6" >
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar mr-1"></i>
-                                        NFL Story
+                                        Players Analysis 2016-2020
                                     </div>
                                     <div class="card-body">
-                                        <div class='tableauPlaceholder' id='viz1615653701114' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Offensive&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='NFLPlayersStats_16155074738800&#47;Offensive' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Offensive&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615653701114');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                                        <div class='tableauPlaceholder' id='viz1615653701114' style='position: relative'>
+                                            <noscript>
+                                                <a href='#'>
+                                                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Offensive&#47;1_rss.png' style='border: none' />
+                                                </a>
+                                            </noscript>
+                                            <object class='tableauViz'  style='display:none;'>
+                                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                                                <param name='embed_code_version' value='3' /> 
+                                                <param name='site_root' value='' />
+                                                <param name='name' value='NFLPlayersStats_16155074738800&#47;Offensive' />
+                                                <param name='tabs' value='no' />
+                                                <param name='toolbar' value='yes' />
+                                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Offensive&#47;1.png' /> 
+                                                <param name='animate_transition' value='yes' />
+                                                <param name='display_static_image' value='yes' />
+                                                <param name='display_spinner' value='yes' />
+                                                <param name='display_overlay' value='yes' />
+                                                <param name='display_count' value='yes' />
+                                                <param name='language' value='es' />
+                                            </object>
+                                        </div>
+                                        <script type='text/javascript'>
+                                            var divElement = document.getElementById('viz1615653701114');
+                                            var vizElement = divElement.getElementsByTagName('object')[0];
+                                            vizElement.style.width='100%';
+                                            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                                            var scriptElement = document.createElement('script');
+                                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                        </script>
                                     </div>
-
                                     <div class="card-body">
-                                        <div class='tableauPlaceholder' id='viz1615653593019' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Defensive&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='NFLPlayersStats_16155074738800&#47;Defensive' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Defensive&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1615653593019');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                                        <div class='tableauPlaceholder' id='viz1615653593019' style='position: relative'>
+                                            <noscript>
+                                                <a href='#'>
+                                                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Defensive&#47;1_rss.png' style='border: none' />
+                                                </a>
+                                            </noscript>
+                                            <object class='tableauViz'  style='display:none;'>
+                                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                                                <param name='embed_code_version' value='3' /> 
+                                                <param name='site_root' value='' />
+                                                <param name='name' value='NFLPlayersStats_16155074738800&#47;Defensive' />
+                                                <param name='tabs' value='no' />
+                                                <param name='toolbar' value='yes' />
+                                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLPlayersStats_16155074738800&#47;Defensive&#47;1.png' /> 
+                                                <param name='animate_transition' value='yes' />
+                                                <param name='display_static_image' value='yes' />
+                                                <param name='display_spinner' value='yes' />
+                                                <param name='display_overlay' value='yes' />
+                                                <param name='display_count' value='yes' />
+                                                <param name='language' value='es' />
+                                                <param name='filter' value='publish=yes' />
+                                            </object>
+                                        </div>
+                                        <script type='text/javascript'>
+                                            var divElement = document.getElementById('viz1615653593019');
+                                            var vizElement = divElement.getElementsByTagName('object')[0];
+                                            vizElement.style.width='100%';
+                                            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                                            var scriptElement = document.createElement('script');
+                                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                        </script>
                                     </div>
-
-
-
-
-
                                 </div>
                             </div>
                         </div>

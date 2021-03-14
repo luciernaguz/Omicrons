@@ -7,22 +7,22 @@
         <meta name="description" content="NFL Dashboard Project" />
         <meta name="author" content="Omicron's team" />
         
-        <!-- Icon for window -->
+        <!-- Icon for tab -->
         <link rel="icon" href="/static/images/logo1.png">
 
         <!-- Reference to CSS stylesheet -->
         <link href="/static/css/styles.css" rel="stylesheet" />
 
-        <!-- Reference to Bootstrap -->
+        <!-- Reference to Ajax -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 
-        <title>Conclusions - Omicron's NFL Project</title>
+        <title>Conclusions</title>
     </head>
     <body class="sb-nav-fixed">
 
-        <!-- Navbar Dashboard -->       
+        <!-- Navbar Dashboard -->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Start NFL Dashboard</a>
+            <a class="navbar-brand" href="/index">Start NFL Dashboard</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         </nav>
 
@@ -33,23 +33,26 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Stats</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/charts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
                                 Player Stats
                             </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Teams
+                            <a class="nav-link" href="/tables">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                                Team Stats
+                            </a>
+                            <a class="nav-link" href="/predictions">
+                                <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
+                                Predictions
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
                             <br>
                             <br>
-                            <br>
-                            <a class="nav-link" href="conclusions.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
+                            <a class="nav-link" href="/conclusions">
+                                <div class="sb-nav-link-icon"><i class="fas fa-scroll"></i></i></div>
                                 Conclusions
                             </a>
-                            <a class="nav-link" href="about.html">
+                            <a class="nav-link" href="/about">
                                 <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
                                 About
                             </a>
@@ -63,22 +66,20 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <!-- Canvas for Gradient Animation -->
-                    <canvas id="canvas-basic"></canvas>
-
                     <div class="container-fluid">
-                        <h1 class="mt-4">Conclusions</h1>
+                        <br>
+                        <!-- <h1 class="mt-4">Conclusions</h1> -->
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
                             <li class="breadcrumb-item active">Conclusions</li>
                         </ol>
                         
-                        <!-- Bar Chart and Pie Chart Area -->
+                        <!-- Paragraph Area -->
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card mb-6">
                                     <div class="card-header">
-                                        <i class="fas fa-check-circle"></i>
+                                        <i class="fas fa-list-alt"></i>
                                         Conclusions
                                     </div>
                                     <div class="card-body">

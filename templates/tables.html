@@ -7,21 +7,24 @@
         <meta name="description" content="NFL Dashboard Project" />
         <meta name="author" content="Omicron's team" />
 
-        <!-- Icon for window -->
+        <!-- Icon for tab -->
         <link rel="icon" href="/static/images/logo1.png">
 
         <!-- Reference to CSS stylesheet -->
         <link href="/static/css/styles.css" rel="stylesheet" />
 
+        <!-- Reference to Bootstrap Data Tables -->
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+        <!-- Reference to Ajax -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 
-        <title>Teams - Omicron's NFL Project</title>
+        <title>Stats - Team</title>
     </head>
     <body class="sb-nav-fixed">
         <!-- Navbar Dashboard -->
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Start NFL Dashboard</a>
+            <a class="navbar-brand" href="/index">Start NFL Dashboard</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         </nav>
 
@@ -32,23 +35,26 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Stats</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/charts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
                                 Player Stats
                             </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Teams
+                            <a class="nav-link" href="/tables">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                                Team Stats
+                            </a>
+                            <a class="nav-link" href="/predictions">
+                                <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
+                                Predictions
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
                             <br>
                             <br>
-                            <br>
-                            <a class="nav-link" href="conclusions.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
+                            <a class="nav-link" href="/conclusions">
+                                <div class="sb-nav-link-icon"><i class="fas fa-scroll"></i></i></div>
                                 Conclusions
                             </a>
-                            <a class="nav-link" href="about.html">
+                            <a class="nav-link" href="/about">
                                 <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
                                 About
                             </a>
@@ -64,30 +70,34 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Teams</h1>
+                        <br>
+                        <!-- <h1 class="mt-4">Teams</h1> -->
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Teams</li>
+                            <li class="breadcrumb-item"><a href="/index">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Team Stats</li>
                         </ol>
                         <!-- Tableau area -->
                         <div class="row">
                             <div class="col-xl-12" >
-                                <div class="card mb-6" style='display: inline-block'>
+                                <div class="card mb-6" >
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar mr-1"></i>
-                                        NFL Story
+                                        Teams Analysis 2016-2020
                                     </div>
                                     <div class="card-body">
                                         <div class='tableauPlaceholder' id='viz1615512550000' style='position: relative;'>
                                             <noscript>
-                                                <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLTeamAnalysis2016-2020&#47;NFLOverview&#47;1_rss.png' style='border: none' /></a>
+                                                <a href='#'>
+                                                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLTeamAnalysis2016-2020&#47;NFLOverview&#47;1_rss.png' style='border: none' />
+                                                </a>
                                             </noscript>
                                             <object class='tableauViz'  style='display: none'>
                                                 <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                                                 <param name='embed_code_version' value='3' /> 
                                                 <param name='site_root' value='' />
                                                 <param name='name' value='NFLTeamAnalysis2016-2020&#47;NFLOverview' />
-                                                <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+                                                <param name='tabs' value='no' />
+                                                <param name='toolbar' value='yes' />
                                                 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFLTeamAnalysis2016-2020&#47;NFLOverview&#47;1.png' /> 
                                                 <param name='animate_transition' value='yes' />
                                                 <param name='display_static_image' value='yes' />
@@ -101,7 +111,8 @@
                                         <script type='text/javascript'>
                                             var divElement = document.getElementById('viz1615512550000');
                                             var vizElement = divElement.getElementsByTagName('object')[0];
-                                            vizElement.style.width='1366px';vizElement.style.height='795px';
+                                            vizElement.style.width='100%';
+                                            vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
                                             var scriptElement = document.createElement('script');
                                             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                                             vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -112,10 +123,11 @@
                         </div>
                     </div>
                 </main>
+                <!-- Footer Copyright-->
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy;  Omicron's Team 2021</div>
+                            <div class="text-muted">Copyright &copy; Omicron's Team 2021</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
