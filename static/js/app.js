@@ -2,7 +2,7 @@
 console.log('Ok connected 23 - app.js');
 //Get jsonData
 let jsonData = '/api/v1.0/teams'; //NEED TO FIX - TO GET FROM URL
-let jsonStadiums='static/Data/stadiums_nfl.json';
+let jsonStadiums='/static/Data/stadiums_nfl.json';
 var jsonPlotData = '/static/Data/plot.json';
 // let jsonData = '../Data/nflData.json'; //NEED TO FIX - TO GET FROM URL
 // let jsonData = '../Data/TeamsData.json'; // (ref 1)
@@ -10,23 +10,23 @@ var jsonPlotData = '/static/Data/plot.json';
 // let jsonStadiums='../Data/stadiums_nfl.json';
 
 
-granimInstance = new Granim({
-    element: '#canvas-basic',
-    name: 'granim',
-    opacity: [1, 1],
-    states : {
-        "default-state": {
-            gradients: [
-                // NFL Blue: #013369
-                // NFL Red: #D50A0A
-                ['#013369', '#F7F9F9'],
-                ['#D50A0A', '#000080']
-            ],
-            transitionSpeed: 40000
-        }
-    }
+// granimInstance = new Granim({
+//     element: '#canvas-basic',
+//     name: 'granim',
+//     opacity: [1, 1],
+//     states : {
+//         "default-state": {
+//             gradients: [
+//                 // NFL Blue: #013369
+//                 // NFL Red: #D50A0A
+//                 ['#013369', '#F7F9F9'],
+//                 ['#D50A0A', '#000080']
+//             ],
+//             transitionSpeed: 40000
+//         }
+//     }
     
-});
+// });
 
 // Icon
 let Icon = L.icon({
@@ -154,7 +154,7 @@ function createMarkers() {
         //console.log(data)
         
         let stadiums = data;        
-        console.log(stadiums);
+        // console.log(stadiums);
 
         // Initialize an array to hold stadiums markers
         stadiumMarkers = []; 
@@ -198,13 +198,12 @@ function plotdata(selectedTeam, PrimaryColor){
                       y: y_values,
                       type: 'bar',
                       marker:{color: PrimaryColor}
-                      //marker:{color: ['#4472C4','#ED7D31','#A5A5A5','#FFC000','#5B9BD5','#70AD47']}
                     }
                   ];
                 let layout = {
                     yaxis: {range: [0, 7000]},
                     title: {
-                        text:'2020 NFL Team Offense Statistics',
+                        text: selectedTeam,
                         font: {size: 24}
                     },
                     images: [
