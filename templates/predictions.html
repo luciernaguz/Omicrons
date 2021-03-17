@@ -76,7 +76,9 @@
                                         Overview Analysis
                                     </div>
                                     <div class="card-body">
-                                        <p style="text-align : justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut nam alias libero recusandae doloribus illo animi! Voluptatum, nemo eaque eos consequuntur magnam odit dolorum natus temporibus. Provident voluptas accusantium ipsum?</p>
+                                        <p style="text-align : justify;">While selecting a topic where we can apply our learnings on Machine Learning, we asked ouserlves if there was a way to create a model that can predict scores based on historical data.
+                                            Since there are tons of variables to consider, we narrow down our scope to test our model using just a couple of variables and understand the correlation between the variables.
+                                            So we decided to use to main variables, one is the weather when the game was played and the second one related to location of the game, meaning played as local or a visitor.</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,8 +93,49 @@
                                         Predictions
                                     </div>
                                     <div class="card-body">
-                                        <p style="text-align : justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit fuga, voluptatem, at obcaecati in adipisci tempore soluta sint atque, nostrum quis labore! Adipisci et omnis eos laborum nesciunt alias optio.</p>
-                                        
+                                        <p>
+                                            <h5>Data Source</h5>
+                                            The data we used for this exercise was pulled from <a href="https://www.kaggle.com/tobycrabtree/nfl-scores-and-betting-data">Kraggle</a>. And we use a data set with the NFL
+                                            results from 1966 season with score games and descriptive info including if a playoff game, played at a neutral site, and weather information if available.
+                                        </p>
+                                        <p>
+                                            <h5>Coding</h5>
+                                            Coding was done using Python and Jupyter Notebooks, using two main libraries: <a href="https://pandas.pydata.org/">Pandas</a> for data manipulation and cleanup mainly and <a href="https://scikit-learn.org/stable/">Scikit-learn</a> for the predictive model.
+                                        </p>
+                                        <p>
+                                            <h6>1. Import Libraries and Data</h6>
+                                            <img src="/static/images/ml_01_libraries.jpg" alt="Pyhton Libraries">
+                                        </p>
+                                        <p>
+                                            <h6>2. Undertanding Data</h6>
+                                            Using Pandas dataframe library using shape, dtypes & describe. <br>
+                                            <img src="/static/images/ml_02_data.jpg" alt="Data Analysis">
+                                        </p>                                        
+                                        <p>
+                                            <h6>3. Narrow down dataset & clean it up by NFL team</h6>
+                                            Here, we follow the next steps to clean up, filter and prepare the data for the model.
+                                            <ul>
+                                                <li>Filter the data only for the last 10 years.</li>
+                                                <li>Narrow the data frame to filter only the games for a given team.</li>
+                                                <li>Create a flag calles home_or_away if game was played locally or away.</li>
+                                                <li>And create an addtional field that consolidate the score for the given team.</li>
+                                            </ul>
+                                            <img src="/static/images/ml_03_filtered_data.jpg" alt="Filtered Data">
+                                        </p> 
+                                        <p>
+                                            <h6>4. Build Linear Regression Model</h6>
+                                            For our model we use the Score as our y value and for our Xs we use the temperature and the local/away game played flag we created.
+                                            And we train and build our Linear Regression model using sklearn libraries. <br>
+                                            <img src="/static/images/ml_04_model.jpg" alt="Model Build-out">
+                                        </p>                                                                                  
+                                        <p>
+                                            <h6>5. Results</h6>
+                                            When running the model we can see the R-squared is pretty low: -0.040. Which tell us the valibles we use do not have a clear correlation with
+                                            the score. We can conclude using weather values wont help to predict the scores for the historical data we pulled from Kragle.
+                                            Future analysis and enhancements to the model will need to be perfomed to find better variables to get closer predictions, a deeper investigation
+                                            is needed to undertand the right variables correlation is needed to improve the model. <br>
+                                            <img src="/static/images/ml_05_results.jpg" alt="Results">
+                                        </p> 
                                     </div>
                                     <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
                                 </div>
