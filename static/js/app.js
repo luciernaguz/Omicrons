@@ -52,11 +52,6 @@ let Icon = L.icon({
     "Light Map": lightmap
   };
 
-  // Create an overlayMaps object to hold the bikeStations layer
-  /* let overlayMaps = {
-    "NFL Stadiums": Stadiums
-  }; */
-    
   // Create the map object with options
   let map = L.map("map-id", {
     center: [40, -99],
@@ -71,6 +66,7 @@ let Stadiums =L.marker();
  */
 function init(){
     fillDropdown();
+    fillDropdownCoach();
     createMarkers();
 }
 
@@ -84,18 +80,44 @@ function fillDropdown(){
         // let teams = data.data; // Para leer directo del Json (ref 1)
         // let teams = data; // Para leer directo del Json completo (ref 2)
 
-        //Dropdowns
         //Dropdown Selected by Team
         d3.select("#selectedTeam").append("option").text('-Select Team-')
         for(x in teams){
             d3.select("#selectedTeam").append("option").text(teams[x].FullName);
         }
+    });
+}
+
+function fillDropdownCoach(){
+    d3.json(jsonData).then((data) => {
+        let teams = data.data[0]; // para /api/v1.0/teams
+        // let teams = data.data; // Para leer directo del Json (ref 1)
+        // let teams = data; // Para leer directo del Json completo (ref 2)
 
         //Dropdown Selected by Coach
-        // d3.select("#selectedCoach").append("option").text('-Select Coach-')
-        // for(x in teams){
-        //     d3.select("#selectedCoach").append("option").text(teams[x].HeadCoach);
-        // }
+        d3.select("#selectedCoach").append("option").text('-Select Coach-')
+        for(x in teams){
+            d3.select("#selectedCoach").append("option").text(teams[x].HeadCoach);
+        }
+    });
+}
+
+/**
+ * Get URL from JSON and dispplay in dashboard
+ * @param {string} selectedCoach Team selected in dropdown
+ */
+ function optionChangedCoach(selectedCoach){
+    console.log(`Selected coach: ${selectedCoach}`)
+    d3.json(jsonData).then((data) => {
+        let teams = data.data[0]; // para /api/v1.0/teams
+        // let teams = data.data; // Para leer directo del Json
+        // let teams = data; // Para leer directo del Json completo (ref 2)
+
+        for(x in teams){
+            if(selectedCoach==teams[x].HeadCoach){
+                optionChanged(teams[x].FullName)
+            }
+        }
     });
 }
 
@@ -106,18 +128,18 @@ function fillDropdown(){
 function optionChanged(selectedTeam){
     console.log(`Selected Team: ${selectedTeam}`)
     d3.json(jsonData).then((data) => {
-        console.log(data)
+        // console.log(data)
         let teams = data.data[0]; // para /api/v1.0/teams
         // let teams = data.data; // Para leer directo del Json
         // let teams = data; // Para leer directo del Json completo (ref 2)
 
         //Display image
         for(x in teams){
-            //console.log(teams[x].Logo)
+
             if(selectedTeam==teams[x].FullName){
 
                 plotdata(selectedTeam,teams[x].PrimaryColor);
-                //console.log(teams[x].Logo)
+
                 d3.select('#teamLogo').attr('src',teams[x].WikipediaLogoUrl) // para /api/v1.0/teams
                 d3.select('#teamLogoName').attr('src',teams[x].WikipediaWordMarkUrl) // para /api/v1.0/teams
 
@@ -142,7 +164,6 @@ function optionChanged(selectedTeam){
                 Markers=L.marker([teams[x].StadiumDetails.GeoLat, teams[x].StadiumDetails.GeoLong],{icon:Icon})
                 .bindPopup("<h3>" + teams[x].StadiumDetails.Name + "<h3><h3>Capacity: " + teams[x].StadiumDetails.Capacity + "</h3><h3>Type: " + teams[x].StadiumDetails.Type + "</h3>").addTo(map);
                 
-             
             }
         }
     });

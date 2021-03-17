@@ -56,9 +56,16 @@
                                     <select id="selectedTeam" onchange="optionChanged(this.value)"></select> 
                                 </a>
                             </a>
+                            <a class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
+                                Coach
+                                <a class="nav-link">
+                                    <select id="selectedCoach" onchange="optionChangedCoach(this.value)"></select> 
+                                </a>
+                            </a>
                             <div class="sb-sidenav-menu-heading">Stats</div>
                             <a class="nav-link" href="/charts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                                 Player Stats
                             </a>
                             <a class="nav-link" href="/tables">
@@ -70,8 +77,6 @@
                                 Predictions
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
-                            <br>
-                            <br>
                             <a class="nav-link" href="/conclusions">
                                 <div class="sb-nav-link-icon"><i class="fas fa-scroll"></i></div>
                                 Conclusions
@@ -157,37 +162,7 @@
                                 </div>
                             </div>
                         </div>
-                      
-
-                        <!-- Map area -->
-                        <!-- <div class="row">
-                            <div class="col-xl-12">
-                                <div class="card mb-6">
-                                    <div class="card-header">
-                                        <i class="fas fa-map"></i>
-                                        Stadiums Map
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="map-id"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br> -->
-
-                        <!-- Bar Graph area -->
-                        <!-- <div class="row">                            
-                            <div class="col-xl-12">
-                                <div class="card mb-6">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar mr-1"></i>
-                                        Team Offense Statistics
-                                    </div>                                    
-                                    <div id="plot"></div>
-                                </div>
-                            </div>
-                        </div> -->
-
+                        <br>
                     </div>
                 </main>
                 <!-- Footer Copyright-->
